@@ -6,12 +6,13 @@
 		<script src="./js/app.js" defer></script>
 		<link rel="stylesheet" href="./css/main.css" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
 		<div id="root" class="container">
 			<ul class="email-list">
-				<li class="email-item"></li>
+				<li v-for="(email, index) in emails" class="email-item">{{ emails[index] }}</li>
 			</ul>
 			<button class="email-button">Generate</button>
 		</div>
