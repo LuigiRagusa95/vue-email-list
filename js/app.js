@@ -7,10 +7,15 @@ new Vue({
 	methods: {
 		generateEmails(len) {
 			Array.from({ length: len }, (_, i) => {
-				return axios.get(this.API_RANDOM_MAIL).then((response) => {
+				axios.get(this.API_RANDOM_MAIL).then((response) => {
 					this.emails.push(response.data.response);
 				});
 			});
+		},
+	},
+	computed: {
+		loaded() {
+			return this.emails.length >= 10 ? true : false;
 		},
 	},
 	created() {

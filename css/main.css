@@ -46,3 +46,18 @@ body {
 	top: 2rem;
 	right: 4rem;
 }
+
+.loader {
+	width: 24px;
+	height: 24px;
+	border-radius: 99999px;
+	border: 3px solid #dddddd;
+	border-right-color: #0089d2;
+	animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(1turn);
+	}
+}

@@ -11,9 +11,10 @@
 	</head>
 	<body>
 		<div id="root" class="container">
-			<ul class="email-list">
+			<ul v-if="loaded" class="email-list">
 				<li v-for="(email, index) in emails" class="email-item">{{ emails[index] }}</li>
 			</ul>
+			<div v-else class="loader"></div>
 			<button class="email-button">Generate</button>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
