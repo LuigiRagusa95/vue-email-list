@@ -6,11 +6,15 @@ new Vue({
 	},
 	methods: {
 		generateEmails(len) {
-			Array.from({ length: len }, (_, i) => {
-				axios.get(this.API_RANDOM_MAIL).then((response) => {
-					this.emails.push(response.data.response);
+			this.emails = [];
+			// voglio vedere il loading! 😅
+			setTimeout(() => {
+				Array.from({ length: len }, (_, i) => {
+					axios.get(this.API_RANDOM_MAIL).then((response) => {
+						this.emails.push(response.data.response);
+					});
 				});
-			});
+			}, 500);
 		},
 	},
 	computed: {

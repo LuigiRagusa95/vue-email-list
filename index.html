@@ -15,7 +15,7 @@
 				<li v-for="(email, index) in emails" class="email-item">{{ emails[index] }}</li>
 			</ul>
 			<div v-else class="loader"></div>
-			<button class="email-button">Generate</button>
+			<button class="email-button" @click="generateEmails(10)">Generate</button>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	</body>
